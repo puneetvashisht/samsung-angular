@@ -23,26 +23,40 @@ function foo() {
     return new Promise(function(resolve, reject) {
         setTimeout(function() {
             console.log('foo!');
-            resolve("success");
-            // reject("error");
+            // resolve("success");
+            reject("error");
         }, 2000);
     });
 }
-
-foo()
-.then(function(result) {
-    console.log(result);
-    if(result=="success") {
-        return true;
+// sugar-syntax for promises using async/await
+async function test(){
+    try{
+        const result = await foo();
+        console.log(result);
     }
-})
-.then(function(data) {    
-    console.log(data);
-})
+    catch(err){
+        console.log(err);
+    }
+    
+}
 
-.catch(function(error) {
-    console.log(error);
-});
+test();
+
+
+// foo()
+// .then(function(result) {
+//     console.log(result);
+//     if(result=="success") {
+//         return true;
+//     }
+// })
+// .then(function(data) {    
+//     console.log(data);
+// })
+
+// .catch(function(error) {
+//     console.log(error);
+// });
 
 // foo(function(result) {
 //     console.log(result);
