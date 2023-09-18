@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            Reverse
+        </title>
+    </head>
+    <body>
+            <input type="text" id="input">
+            <button id="reverse" onclick="reverse()">Reverse</button>
+            <p> String = <span id="message"></span></p>
+            <p>Reversed String = <span id="result"></span></p>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script>
+                function reverse(){
+                    // var content = document.getElementById('input').value;
+                    $('#result').text($('#input').val().split('').reverse().join(''));
+                    $('#message').text($('#input').val())
+                    // console.log(content);
+                    // var revStr = content.split('').reverse().join('');
+                    // console.log(revStr);
+                    // document.getElementById('message').innerText = content;
+                    // document.getElementById('result').innerText = revStr;
+                }
+            </script>
+            
+    </body>
+</html>
