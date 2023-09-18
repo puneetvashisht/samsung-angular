@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+    </head>
+    <body ng-app="myApp">
+        <!-- <p>{{message}}</p> -->
+        <div ng-controller="AppCtrl">
+            <p>{{message}}</p>
+            <p>{{x + y}}</p>
+        </div>
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+            app.controller('AppCtrl', function($scope){
+                $scope.message  = "Welcome user!"
+                $scope.x= 344
+                $scope.y=34
+            })
+
+           // 1. Create controller within module
+           // 2. Each controller will have its own model/$scope
+           // 3. Create View
+        </script>
+    </body>
+</html>

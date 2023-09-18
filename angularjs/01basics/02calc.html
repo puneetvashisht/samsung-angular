@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+    </head>
+    <body ng-app="myApp">
+
+        <div ng-controller="CalcCtrl">
+            <input type="number" ng-model="oper1"/>
+            <input type="number" ng-model="oper2"/>
+            <p>Result :    {{result}}</p>
+         
+            <button ng-click="add()"> + </button>
+            <button ng-click="sub()"> - </button>
+        </div>
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+            app.controller('CalcCtrl', function($scope){
+                $scope.add = function(){
+                    $scope.result = $scope.oper1 + $scope.oper2
+                }
+                $scope.sub = function(){
+                    $scope.result = $scope.oper1 - $scope.oper2
+                }
+
+            })
+        </script>
+    </body>
+</html>

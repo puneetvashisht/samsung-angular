@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+    </head>
+    <body ng-app="myApp">
+       
+        <input type="text" ng-model="caption">
+        {{caption}}
+
+        <div ng-controller="FirstCtrl">
+            <input type="text" ng-model="fName">
+            <input type="text" ng-model="title">
+            {{title}} {{fName}} 
+           
+            <div ng-controller="SecondCtrl">
+                <input type="text" ng-model="lName">
+                {{title}} {{lName}}
+            </div>
+        </div>
+
+        
+
+       
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+            // app.run(function($rootScope){
+            //     $rootScope.title = 'Mr.'
+            // })
+
+            app.factory('CommonStuff', function(){
+                return {
+                    title: 'Mr.'
+                }
+            })
+
+            app.controller('FirstCtrl', function($scope, CommonStuff){
+                $scope.fName = "Puneet"
+                $scope.title = CommonStuff.title
+                console.log($scope);
+            })
+
+            app.controller('SecondCtrl', function($scope, CommonStuff){
+                $scope.lName = "Vashisht"
+                $scope.title = CommonStuff.title
+                console.log($scope);
+            })
+        </script>
+    </body>
+</html>
