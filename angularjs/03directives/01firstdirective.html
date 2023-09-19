@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+    </head>
+    <body ng-app="myApp">
+        
+        <!-- Attribute -->
+        <div s-link></div>
+       
+        <!-- Element -->
+        <s-link></s-link>
+
+        <!-- Class -->
+        <p class="s-link"></p>
+
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+           app.directive('sLink',  function(){
+            return {
+                restrict: 'AEC',
+                replace: false,
+                template: '<h2><a href="http://samsung.com">Samsung Link</a></h2>'
+            }
+           })
+
+        </script>
+    </body>
+</html>
