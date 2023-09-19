@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+    </head>
+    <body ng-app="myApp">
+        <!-- <p>{{message}}</p> -->
+        <div ng-controller="AppCtrl">
+            <p>{{message | uppercase}}</p>
+            <p>{{y | currency: '$'}}</p>
+            <p>{{y | number: '3'}}</p>
+            <p>Date is : {{today | date: 'dd/MM/yyyy hh:mm:ss:sss a'}}</p>
+        </div>
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+            app.controller('AppCtrl', function($scope){
+                $scope.message  = "Welcome user!"
+                $scope.today= new Date();
+                $scope.y=34
+            })
+
+           // 1. Create controller within module
+           // 2. Each controller will have its own model/$scope
+           // 3. Create View
+        </script>
+    </body>
+</html>

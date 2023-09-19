@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    </head>
+    <body ng-app="myApp">
+        <!-- <p>{{message}}</p> -->
+        <div ng-controller="AppCtrl">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Search By Name</span>
+                <input type="text" ng-model="search.name" class="form-control" placeholder="Search By Name" aria-label="Username" aria-describedby="basic-addon1">
+                <!-- {{search | json}} -->
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Search By Gender</span>
+                <input type="text" ng-model="search.gender" class="form-control" placeholder="Search By Gender" aria-label="Username" aria-describedby="basic-addon1">
+                <!-- {{search | json}} -->
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Search By Any Field</span>
+                <input type="text" ng-model="search.$" class="form-control" placeholder="Search All" aria-label="Username" aria-describedby="basic-addon1">
+                <!-- {{search | json}} -->
+              </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Salary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="employee in employees | filter: search | orderBy: 'name'">
+                    <th scope="row">{{$index + 1}}</th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.last_name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.gender}}</td>
+                    <td>{{employee.salary}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+           
+        </div>
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script>
+            var app = angular.module('myApp', [])
+
+            app.controller('AppCtrl', function($scope){
+     
+                $scope.employees = [{"id":1,"name":"Rowney","last_name":"Yoakley","email":"ryoakley0@nba.com","gender":"Male","salary":"$5213.57"},
+                {"id":2,"name":"Thorsten","last_name":"Siley","email":"tsiley1@wunderground.com","gender":"Male","salary":"$9127.19"},
+                {"id":3,"name":"Wynny","last_name":"Lock","email":"wlock2@wp.com","gender":"Female","salary":"$6862.21"},
+                {"id":4,"name":"Travus","last_name":"Meiner","email":"tmeiner3@answers.com","gender":"Male","salary":"$5804.45"},
+                {"id":5,"name":"Travus","last_name":"Hasard","email":"thasard4@businessinsider.com","gender":"Male","salary":"$7812.05"},
+                {"id":6,"name":"Gerik","last_name":"Mallord","email":"gmallord5@mlb.com","gender":"Male","salary":"$8582.25"},
+                {"id":7,"name":"Barrett","last_name":"Nortcliffe","email":"bnortcliffe6@ucsd.edu","gender":"Male","salary":"$7671.76"},
+                {"id":8,"name":"Durante","last_name":"Exer","email":"dexer7@abc.net.au","gender":"Male","salary":"$5279.91"},
+                {"id":9,"name":"Keven","last_name":"Brimfield","email":"kbrimfield8@sitemeter.com","gender":"Male","salary":"$9855.80"},
+                {"id":10,"name":"Jordan","last_name":"Braunfeld","email":"jbraunfeld9@ucoz.com","gender":"Female","salary":"$9707.40"}
+                ]
+    
+            })
+        </script>
+    </body>
+</html>
