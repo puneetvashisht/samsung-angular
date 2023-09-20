@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>DI Demo</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="AppCtrl">
+        <div>
+             <p>E Age : {{dataService.min_age}} </p>  
+
+                <button ng-click="data.sayHello()">Say Hello from Factory</button>
+                <button ng-click="dataService.sayHello()">Say Hello from Service</button>
+                <button ng-click="test.sayHello()">Say Hello from Provider</button>
+        </div>
+      
+    </div>
+
+   
+    <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+
+        //provider style, full blown, configurable version
+        app.provider('hello', function() {
+            // In the provider function, you cannot inject any
+            // service or factory. This can only be done at the
+            // "$get" method.
+
+            this.name = 'Default';
+
+            this.$get = function() {
+                var name = this.name;
+                return {
+                    sayHello: function() {
+                        console.log("Hello, " + name + "!");
+                        return "Hello, " + name + "!"
+                    }
+                }
+            };
+
+            this.setName = function(name) {
+                this.name = name;
+            };
+        });
+
+        app.config(function(helloProvider){
+            helloProvider.setName('Puneet')
+        })
+
+        app.controller('AppCtrl', function($scope, helloFactory, helloService, hello){
+            // console.log(helloFactory)
+            $scope.data = helloFactory
+            $scope.dataService = helloService
+            // $scope.dataService.min_age = 30
+
+            console.log(hello.sayHello())
+            // hello.setName('another name');
+            // console.log(hello.sayHello());
+            $scope.test = hello
+
+        })
+
+
+        // Gives you single instance to be used as data containers
+        app.factory('helloFactory', function(){
+            return {
+                sayHello: function(){
+                    console.log('say hello from Factory')
+                },
+                min_age : 18
+            }
+        })
+        // Give you single instance but is more to be used for service orchestration methods
+        app.service('helloService', function(){
+            this.sayHello =  function(){
+                    console.log('say hello from Service')
+                }
+            this.min_age = 18
+        })
+
+        
+
+    
+    
+    </script>
+   
+</body>
+</html>

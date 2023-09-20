@@ -1,0 +1,22 @@
+<div class="row">
+    <div ng-if="message" class="alert alert-success" role="alert">
+        {{message}}
+    </div>
+</div>
+<div class="row">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Title</span>
+        <input type="text" ng-model="course.title" class="form-control" placeholder="Enter Title" aria-label="Username"
+            aria-describedby="basic-addon1">
+        <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Summary</span>
+        <input type="text" ng-model="course.summary" class="form-control" placeholder="Enter Summary"
+            aria-label="Username" aria-describedby="basic-addon1">
+        <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+        <buttton class="btn btn-primary" ng-click="addCourse()">Add Course</buttton>
+    </div>
+</div>

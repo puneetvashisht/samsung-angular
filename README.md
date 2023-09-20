@@ -25,3 +25,10 @@ AngularJS
         $rootScope: Parent of all scopes
     - View: html template {{}}, ng-model
     - Sharing using factory
+
+
+Routing
+    - angular-route script
+    - module injection of 'ngRoute' into 'myApp' module
+    - congfigure routeProvider using when statements
+    - create partials (small portion of html/view)
