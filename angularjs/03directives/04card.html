@@ -7,13 +7,33 @@
     <body ng-app="courseApp">
       <div class="container" ng-controller="CardCtrl">
         <div class="row">
-           
-            <s-card ng-repeat="course in courses" title={{course.title}} summary={{course.summary}}></s-card>
+          <div ng-if="message" class="alert alert-success" role="alert">
+           {{message}}
+          </div>
+          </div>
+        <div class="row">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+            <input type="text" ng-model="course.title" class="form-control" placeholder="Enter Title" aria-label="Username" aria-describedby="basic-addon1">
+            <!-- {{search | json}} -->
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Summary</span>
+            <input type="text" ng-model="course.summary" class="form-control" placeholder="Enter Summary" aria-label="Username" aria-describedby="basic-addon1">
+            <!-- {{search | json}} -->
+          </div>
+          <div class="input-group mb-3">
+            <buttton class="btn btn-primary" ng-click="addCourse()">Add Course</buttton>
+          </div>
+         </div>
+        <div class="row">
+               <s-card ng-repeat="course in courses" title={{course.title}} summary={{course.summary}}></s-card>
         </div>  
       </div>
         
         <!-- <s-card title="ReactJS" summary="library from facebook!"></s-card>
  -->
+ <hr/>
 
         <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
         <script src="js/badge.js"></script>
