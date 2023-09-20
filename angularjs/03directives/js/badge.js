@@ -2,7 +2,7 @@ var app = angular.module('myApp', [])
 
 app.directive('sBadge', function(){
      return{
-         templateUrl: 'partial/badge.html'
+         templateUrl: 'js/partial/badge.html'
 ,
          scope: {},
          link: function(scope, element, attrs){

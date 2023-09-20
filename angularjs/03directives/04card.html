@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Angular MVC demo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+
+    </head>
+    <body ng-app="courseApp">
+      <div class="container" ng-controller="CardCtrl">
+        <div class="row">
+           
+            <s-card ng-repeat="course in courses" title={{course.title}} summary={{course.summary}}></s-card>
+        </div>  
+      </div>
+        
+        <!-- <s-card title="ReactJS" summary="library from facebook!"></s-card>
+ -->
+
+        <script src="https://code.angularjs.org/1.6.0/angular.js"></script>
+        <script src="js/badge.js"></script>
+        <script src="js/card.js"></script>
+    </body>
+</html>
