@@ -26,9 +26,37 @@ AngularJS
     - View: html template {{}}, ng-model
     - Sharing using factory
 
+Filters - Trasnformation and Filtering
+    - Built in filters (currency, date, filter, uppercase, limitTo)
+    - Custom filter app.filter - reverse
+    - Filters are not controller ( only applied on template/view )
+
+Directives- Custom Tags or HTML Vocab extension
+    - using app.directive
+    - restrict : 'AEC'
+    - link function  (scope, element, attrs)
+    - Isolating scopes - every directive instance to have its own data
+        @ - Access read only attributes
+        = - Access read/wirte on attributes
+        & - reference a function from scope
+
+DI - Configuring dependencies and getting instances
+
+Server Side Communication
+    - $http (GET, POST, DELETE)
+    - different ip/port .. cors enabled
+    * use cors only in dev environment
 
 Routing
     - angular-route script
     - module injection of 'ngRoute' into 'myApp' module
     - congfigure routeProvider using when statements
     - create partials (small portion of html/view)
+    - parameterized route
+    - $routeParams
+    - Programatic navigation
+
+
+Form Validations
+
+Angular Bootstrap

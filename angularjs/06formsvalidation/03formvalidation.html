@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+    </style>
+
+    <!-- JS -->
+
+    <script>
+
+
+        var validationApp = angular.module('validationApp', []);
+        // create angular controller
+        validationApp.controller('mainController', function ($scope) {
+            // function to submit the form after all validation has occurred            
+            $scope.submitForm = function () {
+                // check to make sure the form is completely valid
+                if ($scope.userForm.$valid) {
+                    alert('Form Entries are Proper!');
+                }
+            };
+        });
+    </script>
+</head>
+
+<body ng-app="validationApp" ng-controller="mainController">
+    <div class="container">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>AngularJS Form Validation</h1>
+        </div>
+
+        <!-- =================================================================== -->
+        <!-- FORM ============================================================== -->
+        <!-- =================================================================== -->
+        <form name="userForm" ng-submit="submitForm()" novalidate>
+            <!-- NAME -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                <label>Name (Should not Empty)</label>
+                <input type="text" name="name" class="form-control" ng-model="user.name" required>
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+            </div>
+
+            <!-- USERNAME -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+                <label>Username (Atleast 3 character)</label>
+                <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
+                <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+                <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.age.$invalid && !userForm.age.$pristine }">
+                <label>Age (Should be Number Only)</label>
+                <input type="number" name="age" class="form-control" ng-model="user.age" ng-minlength="2" ng-maxlength="3" required>
+                <p ng-show="userForm.age.$error.minlength" class="help-block">Age Should be 10+.</p>
+                <p ng-show="userForm.age.$error.maxlength" class="help-block">Age Should be 999-.</p>
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                <label>Email (Should be proper Address)</label>
+                <input type="email" name="email" class="form-control" ng-model="user.email">
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">
+                    Enter a valid email.
+                </p>
+            </div>
+
+            <!-- About -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.about.$invalid && !userForm.about.$pristine }">
+                <label>About (Should contain character only)</label>
+                <input type="text" name="about" class="form-control" ng-model="user.about" ng-pattern="/^[a-zA-Z]/">
+                <p ng-show="userForm.about.$invalid && !userForm.about.$pristine" class="help-block">
+                    Should contain character only.
+                </p>
+            </div>
+
+            <!-- URL -->
+            <div class="form-group" ng-class="{ 'has-error' : userForm.homepage.$invalid && !userForm.homepage.$pristine }">
+                <label>URL</label>
+                <input type="url" name="homepage" class="form-control" ng-model="user.homepage">
+                <p ng-show="userForm.homepage.$invalid && !userForm.homepage.$pristine" class="help-block">
+                    Url not fine.
+                </p>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+            <br>
+            <br>
+            <label>( Submit Button disabled if form information is not Valid/Empty )</label>
+        </form>
+    </div>
+</body>
+
+</html>

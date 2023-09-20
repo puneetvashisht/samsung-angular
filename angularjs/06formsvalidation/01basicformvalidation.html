@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Calc App</title>
+    <style>
+        .ng-invalid  {
+            border: 3px solid red;
+        }
+
+        .ng-valid  {
+            border: 3px solid green;
+        }
+    
+    
+    </style>
+</head>
+<body ng-app="calcApp">
+    <div ng-controller="calcCtrl">
+        <form action="/someUrl" method="POST">
+                <input type="text" ng-model="aProp" required/>
+                <input type="number" ng-model="oper1"/> 
+                <input type="number" ng-model="oper1"/> 
+                
+                <input type="number" ng-model="oper2"/>
+                <button ng-click="add()"> + </button>
+                <button ng-click="sub()"> - </button>
+                <h3>Result is : {{result}}</h3>
+
+                <button type="submit"> Submit </button>
+        </form>
+        
+    </div>
+    <script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+
+    <script>
+        var app = angular.module('calcApp', [])
+
+        app.controller('calcCtrl', function($scope){
+
+            console.log($scope)
+          
+            $scope.add = function(){
+                console.log("Button clicked...")
+                console.log($scope.oper1 + $scope.oper2)
+                $scope.result = $scope.oper1 + $scope.oper2;
+                
+            }
+            $scope.sub = function(){
+                console.log("Button clicked...")
+                // console.log($scope.oper1 + $scope.oper2)
+                $scope.result = $scope.oper1 - $scope.oper2;
+                
+            }
+
+        })
+        
+    </script>
+</body>
+</html>
