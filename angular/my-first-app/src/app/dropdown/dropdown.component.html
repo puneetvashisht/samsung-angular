@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button (click)="toggleShow()" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{caption}}
+    </button>
+    <ul [ngClass]="show ? 'dropdown-menu show' : 'dropdown-menu'">
+      <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
+      <app-dropdown-item *ngFor="let course of courses" [text]="course" (itemClicked)="handleItemClicked($event)"></app-dropdown-item>
+    </ul>
+  </div>

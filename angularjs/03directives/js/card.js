@@ -36,6 +36,7 @@ app.controller('CardCtrl', function ($scope, $http) {
 
 app.directive('sCard', function(){
      return{
+        restrict: 'AEC',
          templateUrl: 'js/partial/card.html',
          replace: true,
          scope: {
