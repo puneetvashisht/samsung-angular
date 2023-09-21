@@ -40,6 +40,7 @@ Directives- Custom Tags or HTML Vocab extension
         = - Access read/wirte on attributes
         & - reference a function from scope
 
+
 DI - Configuring dependencies and getting instances
 
 Server Side Communication
@@ -60,3 +61,9 @@ Routing
 Form Validations
 
 Angular Bootstrap
+
+Angular New Version (2.x.x onwards)
+    Install Angular CLI global (npm i -g @angular/cli)
+    ng new <app-name>
+    cd <app-name>
+    npm start
