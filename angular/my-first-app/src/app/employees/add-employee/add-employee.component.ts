@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Employee } from 'src/app/pipes-demo/Employee';
 import {HttpClient} from '@angular/common/http'
+import { EmployeeService } from '../employee.service';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -8,14 +9,13 @@ import {HttpClient} from '@angular/common/http'
 })
 export class AddEmployeeComponent {
 
-  constructor(private http: HttpClient){
+  constructor(private employeeService :EmployeeService){
 
   }
 
   addEmployee( e: Employee){
     console.log(e);
-
-    this.http.post('http://localhost:3000/employees', e)
+    this.employeeService.addEmployee(e)
     .subscribe(res => console.log(res));
 
   }

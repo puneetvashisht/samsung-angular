@@ -81,6 +81,10 @@ Angular Pipes
     ng g p <pipe-name>
     transform method from PipeTransform
 
+Angular Service
+    ng g s <service-name>
+    Services by default are singleton
+
 Http Communication
 
     0. Setup a fake server

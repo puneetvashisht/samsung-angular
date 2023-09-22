@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Employee } from 'src/app/pipes-demo/Employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-view-employees',
@@ -11,15 +12,21 @@ export class ViewEmployeesComponent implements OnInit{
 
   employees: Array<Employee> = []
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/employees')
+    this.employeeService.fetchEmployees()
     .subscribe((res:any) => {
       console.log(res);
       
       this.employees = res;
     })
   }
-
-  constructor(private http : HttpClient){
+  deleteEmployee(id: number){
+    this.employeeService.deleteEmployee(id)
+    .subscribe(res=>{
+      console.log(res);
+      
+    })
+  }
+  constructor(private employeeService: EmployeeService){
 
   }
 
