@@ -15,6 +15,30 @@
       "gender": "Male",
       "salary": "$3434.57",
       "id": 2
+    },
+    {
+      "name": "Puneet",
+      "last_name": "Vashisht",
+      "gender": "M",
+      "email": "puneetvashisht@gmail.com",
+      "salary": "22323",
+      "id": 5
+    },
+    {
+      "name": "Ravi",
+      "last_name": "Kumar",
+      "gender": "Male",
+      "email": "puneetvashisht@gmail.com",
+      "salary": "34344",
+      "id": 6
+    },
+    {
+      "name": "Richa",
+      "last_name": "Gambhir",
+      "gender": "Female",
+      "email": "puneetvashisht@gmail.com",
+      "salary": "22222",
+      "id": 7
     }
   ]
 }

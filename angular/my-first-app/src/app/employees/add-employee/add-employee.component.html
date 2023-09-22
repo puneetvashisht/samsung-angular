@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">First Name</span>
+      <input type="text" #name (keyup)="0" class="form-control" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Last Name</span>
+      <input type="text"  #lastname (keyup)="0"  class="form-control" placeholder="Enter Last Name" aria-label="Username" aria-describedby="basic-addon1">
+      <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Gender</span>
+      <input type="text"  #gender (keyup)="0"   class="form-control" placeholder="Enter Gender" aria-label="Username" aria-describedby="basic-addon1">
+      <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Email</span>
+      <input type="email"  #email (keyup)="0"  class="form-control" placeholder="Enter Email" aria-label="Username" aria-describedby="basic-addon1">
+      <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Salary</span>
+      <input type="text"  #salary (keyup)="0"  class="form-control" placeholder="Enter Salary" aria-label="Username" aria-describedby="basic-addon1">
+      <!-- {{search | json}} -->
+    </div>
+    <div class="input-group mb-3">
+      <button class="btn btn-primary" (click)="addEmployee({name: name.value, last_name:lastname.value, gender: gender.value, email: email.value, salary: salary.value})">Add Employee</button>
+    </div>
+   </div>

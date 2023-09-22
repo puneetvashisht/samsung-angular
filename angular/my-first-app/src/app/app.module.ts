@@ -9,10 +9,12 @@ import { DropdownItemComponent } from './dropdown-item/dropdown-item.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { SearchPipe } from './search.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { ViewEmployeesComponent } from './employees/view-employees/view-employees.component';
+import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
-    AppComponent, MessageComponent, BadgeComponent, DropdownComponent, DropdownItemComponent, PipesDemoComponent, SearchPipe
+    AppComponent, MessageComponent, BadgeComponent, DropdownComponent, DropdownItemComponent, PipesDemoComponent, SearchPipe, ViewEmployeesComponent, AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
