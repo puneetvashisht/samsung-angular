@@ -67,3 +67,26 @@ Angular New Version (2.x.x onwards)
     ng new <app-name>
     cd <app-name>
     npm start
+
+Angular Component
+    ng g c <component-name>
+
+    Data Binding
+        1. Interpolation : {{}}
+        2. Property Binding: [] - @Input
+        3. Event Binding: () - @Output
+        4.  X Two way data binding : [()]
+
+Angular Pipes
+    ng g p <pipe-name>
+    transform method from PipeTransform
+
+Http Communication
+
+    0. Setup a fake server
+        npm i -g json-server
+        json-server --watch db.json --port 3000
+
+    1. HttpClientModule in AppModule imports
+    2. Inject HttpClient service in component
+    3. Using http GET/POST/DELETE/PUT method

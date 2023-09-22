@@ -1,0 +1,13 @@
+<p>pipes-demo works!</p>
+<button (click)="loadData()">Load Data</button>
+<p>{{message | uppercase}}</p>
+            <p>{{y | currency: '$'}}</p>
+            <!-- <p>{{y | number: '3'}}</p> -->
+            <p>Date is : {{today | date: 'dd/MM/yyyy hh:mm:ss:sss a'}}</p>
+            <p>{{scores | slice : 3}}</p>
+            <p>{{scores | slice:1:3 }}</p>
+            <p>{{scores | slice: -2}}</p>
+
+
+            <!-- <p>{{employees | search:  'Travus' | json}}</p> -->
+            <p>{{employees | json}}</p>
