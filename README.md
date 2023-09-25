@@ -94,3 +94,12 @@ Http Communication
     1. HttpClientModule in AppModule imports
     2. Inject HttpClient service in component
     3. Using http GET/POST/DELETE/PUT method
+
+Routing
+    - RouterModule @angular/router
+    - module injection of 'RouteModule' into 'AppModule'
+    - congfigure Routes using path and component
+    - use <router-outlet> to  display and link using <a routerLink>
+    - parameterized route
+    - $routeParams
+    - Programatic navigation
