@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ViewEmployeesComponent } from './employees/view-employees/view-employees.component';
 import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,7 +25,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

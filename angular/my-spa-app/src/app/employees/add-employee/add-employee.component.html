@@ -1,32 +1,28 @@
 <div class="row">
-    <div class="input-group mb-3">
+  <form [formGroup]="employeeForm">
+   
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">First Name</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">First Name</span>
+        <input type="text" formControlName = "fName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
+      </div>
+
+      <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div> 
+
+    </div>
+
+    <!-- <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">First Name</span>
-      <input type="text" #name (keyup)="0" class="form-control" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1">
+      <input type="text" formControlName = "fName" class="form-control" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1">
+      
     </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Last Name</span>
-      <input type="text"  #lastname (keyup)="0"  class="form-control" placeholder="Enter Last Name" aria-label="Username" aria-describedby="basic-addon1">
-      <!-- {{search | json}} -->
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Gender</span>
-      <input type="text"  #gender (keyup)="0"   class="form-control" placeholder="Enter Gender" aria-label="Username" aria-describedby="basic-addon1">
-      <!-- {{search | json}} -->
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Email</span>
-      <input type="email"  #email (keyup)="0"  class="form-control" placeholder="Enter Email" aria-label="Username" aria-describedby="basic-addon1">
-      <!-- {{search | json}} -->
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Salary</span>
-      <input type="text"  #salary (keyup)="0"  class="form-control" placeholder="Enter Salary" aria-label="Username" aria-describedby="basic-addon1">
-      <!-- {{search | json}} -->
-    </div>
-    <div *ngIf="!employeeId" class="input-group mb-3">
-      <button class="btn btn-primary" (click)="addEmployee({name: name.value, last_name:lastname.value, gender: gender.value, email: email.value, salary: salary.value})">Add Employee</button>
-    </div>
-    <div *ngIf="employeeId" class="input-group mb-3">
-      <button class="btn btn-primary" (click)="updateEmployee({name: name.value, last_name:lastname.value, gender: gender.value, email: email.value, salary: salary.value})">Update Employee</button>
-    </div>
+    <div  *ngIf="!employeeForm.get('fName')?.valid" class="invalid-feedback">
+      Please choose a username.
+    </div> -->
+    <!--  -->
+   
+
+  </form>
+
    </div>
