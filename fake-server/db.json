@@ -39,6 +39,26 @@
       "email": "rc@gmail.com",
       "salary": "66666",
       "id": 7
+    },
+    {
+      "fName": "Mansi",
+      "lName": "Khanna",
+      "email": "mk@d.c",
+      "gender": "Female",
+      "salary": 3333,
+      "name": "Mansi",
+      "last_name": "Khanna",
+      "id": 9
+    },
+    {
+      "fName": "Nancy",
+      "lName": "Singh",
+      "email": "fd@rkd.com",
+      "gender": "Female",
+      "salary": 11111,
+      "name": "Nancy",
+      "last_name": "Singh",
+      "id": 10
     }
   ]
 }

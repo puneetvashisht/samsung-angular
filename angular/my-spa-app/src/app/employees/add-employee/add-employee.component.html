@@ -2,14 +2,90 @@
   <form [formGroup]="employeeForm">
    
     <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">First Name</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">First Name</span>
-        <input type="text" formControlName = "fName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
+        <input type="text" name="fName" formControlName = "fName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
       </div>
 
-      <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div> 
+      <!-- <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div>  -->
+      <div *ngIf="employeeForm.get('fName')?.invalid && (employeeForm.get('fName')?.dirty || employeeForm.get('fName')?.touched)"
+      class="alert">
+  
+      <div class="error-message" *ngIf="employeeForm.get('fName')?.errors?.['required']">
+        Name is required.
+      </div>
+      <div class="error-message" *ngIf="employeeForm.get('fName')?.errors?.['minlength']">
+        Name must be at least 3 characters long.
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">Last Name</span>
+        <input type="text" formControlName = "lName" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
+      </div>
 
+      <!-- <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div>  -->
+      <div *ngIf="employeeForm.get('lName')?.invalid && (employeeForm.get('lName')?.dirty || employeeForm.get('lName')?.touched)"
+      class="alert">
+  
+      <div class="error-message" *ngIf="employeeForm.get('lName')?.errors?.['required']">
+        Last Name is required.
+      </div>
+    
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">Email</span>
+        <input type="email" formControlName = "email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
+      </div>
+
+      <!-- <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div>  -->
+      <div *ngIf="employeeForm.get('email')?.invalid && (employeeForm.get('email')?.dirty || employeeForm.get('email')?.touched)"
+      class="alert">
+  
+      <div class="error-message" *ngIf="employeeForm.get('email')?.errors?.['email']">
+        Enter proper email!.
+      </div>
+    
+      </div>
+    </div>
+
+    <div class="col-md-4">
+
+       <div class="radio" *ngFor="let g of genders">
+        <label>
+          <input type="radio" formControlName = "gender" [value]="g" />
+          {{g}}
+        </label>
+       </div>
+       
+       <div class="col-md-4">
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">Salary</span>
+          <input type="number" formControlName = "salary" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"/>
+        </div>
+  
+        <!-- <div class="error-message" *ngIf=" employeeForm.get('fName')?.dirty && !employeeForm.get('fName')?.valid">Invalid first name !</div>  -->
+        <div *ngIf="employeeForm.get('salary')?.invalid && (employeeForm.get('salary')?.dirty || employeeForm.get('salary')?.touched)"
+        class="alert">
+    
+        <div class="error-message" *ngIf="employeeForm.get('salary')?.errors?.['min']">
+          Minimum salary > 1000 !.
+        </div>
+      
+        </div>
+      </div>
+
+      <div *ngIf="!employeeId" class="input-group mb-3">
+        <button class="btn btn-primary" (click)="addEmployee()" [disabled]="!employeeForm.valid">Add Employee</button>
+      </div>
+      <div *ngIf="employeeId" class="input-group mb-3">
+        <button class="btn btn-primary" (click)="updateEmployee()">Update Employee</button>
+      </div>
+      
     </div>
 
     <!-- <div class="input-group mb-3">
