@@ -25,4 +25,7 @@ export class EmployeeService {
   addEmployee(e: Employee) :  Observable<any>{
     return this.http.post(baseUrl, e)
   }
+  updateEmployee(e: Employee, id: string) :  Observable<any>{
+    return this.http.patch(baseUrl + id, e)
+  }
 }

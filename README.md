@@ -101,5 +101,5 @@ Routing
     - congfigure Routes using path and component
     - use <router-outlet> to  display and link using <a routerLink>
     - parameterized route
-    - $routeParams
+    - ActivatedRoute represents currently activated rotue -- extract params
     - Programatic navigation

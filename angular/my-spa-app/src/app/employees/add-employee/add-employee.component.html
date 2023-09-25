@@ -23,7 +23,10 @@
       <input type="text"  #salary (keyup)="0"  class="form-control" placeholder="Enter Salary" aria-label="Username" aria-describedby="basic-addon1">
       <!-- {{search | json}} -->
     </div>
-    <div class="input-group mb-3">
+    <div *ngIf="!employeeId" class="input-group mb-3">
       <button class="btn btn-primary" (click)="addEmployee({name: name.value, last_name:lastname.value, gender: gender.value, email: email.value, salary: salary.value})">Add Employee</button>
+    </div>
+    <div *ngIf="employeeId" class="input-group mb-3">
+      <button class="btn btn-primary" (click)="updateEmployee({name: name.value, last_name:lastname.value, gender: gender.value, email: email.value, salary: salary.value})">Update Employee</button>
     </div>
    </div>
