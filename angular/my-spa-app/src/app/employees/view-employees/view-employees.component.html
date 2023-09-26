@@ -1,3 +1,8 @@
+<div class="row">
+  <ngb-toast *ngIf="show" header="Notification →" [autohide]="false" (hidden)="close()">
+    {{message}}
+  </ngb-toast>
+</div>
 <table class="table">
     <thead>
       <tr>

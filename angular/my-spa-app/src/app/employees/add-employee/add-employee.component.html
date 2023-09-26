@@ -1,6 +1,12 @@
 <div class="row">
+  <ngb-toast *ngIf="show" header="Notification →" [autohide]="false" (hidden)="close()">
+    {{message}}
+  </ngb-toast>
+</div>
+<div class="row">
   <form [formGroup]="employeeForm">
    
+
     <div class="col-md-4">
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">First Name</span>

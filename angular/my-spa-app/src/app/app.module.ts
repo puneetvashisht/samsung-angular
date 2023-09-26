@@ -9,13 +9,24 @@ import { ViewEmployeesComponent } from './employees/view-employees/view-employee
 import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbAccordionModule, NgbModule, NgbRatingModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentModule } from './payment/payment.module';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  // Lazy Loaded
+  {path : 'payments', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule)},
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {path: 'home',  component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'view', component: ViewEmployeesComponent},
   {path: 'add', component: AddEmployeeComponent},
   {path: 'update/:id', component: AddEmployeeComponent},
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }
+ 
 ]; 
 
 @NgModule({
@@ -27,7 +38,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgbToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

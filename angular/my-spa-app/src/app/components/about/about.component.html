@@ -1,1 +1,11 @@
-<p>about works!</p>
+<ngb-rating [(rate)]="currentRate"></ngb-rating>
+<hr />
+<pre>Rate: <b>{{currentRate}}</b></pre>
+
+<button class="btn btn-primary" (click)="show = !show">Click me to show a toast</button>
+<hr *ngIf="show" />
+
+
+<ngb-toast *ngIf="show" header="Notification →" [autohide]="false" (hidden)="close()">
+	{{message}}
+</ngb-toast>

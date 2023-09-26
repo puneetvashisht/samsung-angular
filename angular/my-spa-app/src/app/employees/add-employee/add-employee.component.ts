@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http'
 import { EmployeeService } from '../employee.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
@@ -12,6 +13,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AddEmployeeComponent implements OnInit{
 
   employeeId: string = '';
+  show = false;
+  message: string  = ''
+
+  close() {
+		this.show = false;
+		setTimeout(() => (this.show = true), 3000);
+	}
 
   genders: Array<string>= ['Male', 'Female']
 
@@ -63,7 +71,11 @@ export class AddEmployeeComponent implements OnInit{
     
 
     this.employeeService.addEmployee(e)
-    .subscribe(res => console.log(res));
+    .subscribe(res => {
+      console.log(res);
+      this.show = true;
+      this.message = 'Successfully created employee !'
+    });
 
   }
   updateEmployee(){
