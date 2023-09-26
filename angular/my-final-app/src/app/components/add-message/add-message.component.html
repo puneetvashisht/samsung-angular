@@ -1,0 +1,26 @@
+<p>add-message works!</p>
+
+<form class="example-form" [formGroup]="myForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <!-- <input matInput placeholder="Enter Message" name="message" [(ngModel)]="message"> -->
+      <input matInput placeholder="Enter Message" name="message" formControlName="message"/>
+      <mat-error *ngIf="myForm.get('message')?.errors?.['required']">
+        Please enter a value
+      </mat-error>
+      <mat-error *ngIf="myForm.get('message')?.errors?.['forbiddenName']">
+        This value is forbidden
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <button mat-button (click)="addMessage()" color="primary" [disabled]="!myForm.valid">Add Message</button>
+
+    <ul>
+        <li *ngFor="let message of messageService.messages">{{message}}</li>
+    </ul>
+  </form>

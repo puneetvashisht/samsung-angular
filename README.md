@@ -68,6 +68,23 @@ Angular New Version (2.x.x onwards)
     cd <app-name>
     npm start
 
+
+Benefits:
+    - High Performance 
+    - Single Page Application / Routing
+    - Binding (property binding, event binding, interpolation)
+        - Two way binding [(ngModel)]
+    - Http Communication
+    - HTML Vocab addtion (elements, attributes ) *ngFor - third party integration (ng-bootstrap, material-ui)
+    - Shortened JS
+    - Modularized (use what is needed) resulting in smaller builds
+    - Type Safety - handle issues at compile rather than run
+    - Dependency Injection (just configure)
+        Services
+    - Form Validation
+    
+
+
 Angular Component
     ng g c <component-name>
 
@@ -75,7 +92,7 @@ Angular Component
         1. Interpolation : {{}}
         2. Property Binding: [] - @Input
         3. Event Binding: () - @Output
-        4.  X Two way data binding : [()]
+        4. Two way data binding : [(ngModel)]
 
 Angular Pipes
     ng g p <pipe-name>
