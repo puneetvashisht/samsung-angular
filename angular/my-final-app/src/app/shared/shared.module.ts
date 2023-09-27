@@ -8,6 +8,7 @@ import {MatMenuModule} from '@angular/material/menu'
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from  '@angular/material/toolbar'
 import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card'
 // import {MatLabelModule} from '@angular/material/'
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -15,7 +16,7 @@ import {CdkTreeModule} from '@angular/cdk/tree';
 
 
 
-const modules = [ MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatToolbarModule, MatTableModule]
+const modules = [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule, MatMenuModule, MatIconModule, MatToolbarModule, MatTableModule]
 
 @NgModule({
   declarations: [],

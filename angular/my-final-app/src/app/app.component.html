@@ -1,9 +1,11 @@
 
 <mat-toolbar>
-    <span>Workout Application    </span>
-        <a routerLink="/">View</a> | 
-        <a routerLink="/add">Add</a> | 
-        <a routerLink="/workouts/view">View Workouts</a> | 
+    <span>Workout Application  Login Status:  {{isAuthenticated}} </span>
+        <a *ngIf="isAuthenticated" routerLink="/">View</a> | 
+        <a *ngIf="isAuthenticated" routerLink="/add">Add</a> | 
+        <a *ngIf="isAuthenticated" routerLink="/workouts/view">View Workouts</a> | 
+        <a *ngIf="!isAuthenticated" routerLink="/login">Login</a> | 
+        <a *ngIf="isAuthenticated" routerLink="/login">Logout</a> | 
   </mat-toolbar>
 
 <router-outlet></router-outlet>

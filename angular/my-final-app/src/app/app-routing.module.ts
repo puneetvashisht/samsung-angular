@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddMessageComponent } from './components/add-message/add-message.component';
 import { ViewMessageComponent } from './components/view-message/view-message.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  {path: 'add', component : AddMessageComponent},
-  {path: 'view', component : ViewMessageComponent},
-  { path: 'workouts', loadChildren: () => import('./workouts/workouts.module').then(m => m.WorkoutsModule) },
+  {path: 'add', component : AddMessageComponent, canActivate: [AuthGuard]},
+  {path: 'view', component : ViewMessageComponent, canActivate: [AuthGuard]},
+  {path: 'login', component : LoginComponent},
+  { path: 'workouts', loadChildren: () => import('./workouts/workouts.module').then(m => m.WorkoutsModule) , canActivate: [AuthGuard]},
   {
     path: '',
-    redirectTo: 'view',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];

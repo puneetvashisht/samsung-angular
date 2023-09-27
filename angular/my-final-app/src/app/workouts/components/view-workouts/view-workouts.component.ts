@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WorkoutService } from '../../workout.service';
 import { MatTableModule } from '@angular/material/table';
 
+
 export interface Category {
   id: number,
   title: string
