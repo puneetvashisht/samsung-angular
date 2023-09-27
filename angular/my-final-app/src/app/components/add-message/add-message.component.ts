@@ -21,7 +21,9 @@ export class AddMessageComponent {
   // message: string = ''
 
   myForm: FormGroup = new FormGroup({
-    message: new FormControl('', [Validators.required, Validators.minLength(3), forbiddenNameValidator()] )
+    message: new FormControl('', [Validators.required, Validators.minLength(3), forbiddenNameValidator()] ),
+
+    
    
   });
 

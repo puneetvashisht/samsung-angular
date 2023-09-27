@@ -7,11 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddMessageComponent } from './components/add-message/add-message.component';
 import { ViewMessageComponent } from './components/view-message/view-message.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button'
-import {MatListModule} from '@angular/material/list';
+
 import { MessageService } from './services/message.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -23,9 +22,11 @@ import { MessageService } from './services/message.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatListModule
+    FormsModule, 
+    SharedModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

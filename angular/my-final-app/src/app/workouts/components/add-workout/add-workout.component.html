@@ -1,0 +1,32 @@
+
+<form class="example-form" [formGroup]="myForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <!-- <input matInput placeholder="Enter Message" name="message" [(ngModel)]="message"> -->
+      <input matInput placeholder="Enter Title" name="title" formControlName="title"/>
+      <mat-error *ngIf="myForm.get('title')?.errors?.['required']">
+        Please enter a value
+      </mat-error>
+      <mat-error *ngIf="myForm.get('title')?.errors?.['forbiddenName']">
+        This value is forbidden
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Calories Burnt Per Minute</mat-label>
+      <!-- <input matInput placeholder="Enter Message" name="message" [(ngModel)]="message"> -->
+      <input type="number" matInput placeholder="Enter Calories" name="cbpm" formControlName="cbpm"/>
+      <mat-error *ngIf="myForm.get('cbpm')?.errors?.['min']">
+        Accept calories above 10!
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width"> 
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+
+    <button mat-button (click)="addWorkout()" color="primary" [disabled]="!myForm.valid">Add Workout</button>
+
+  
+  </form>

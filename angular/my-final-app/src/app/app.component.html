@@ -1,5 +1,9 @@
-<app-add-message></app-add-message>
 
-<hr/>
+<mat-toolbar>
+    <span>Workout Application    </span>
+        <a routerLink="/">View</a> | 
+        <a routerLink="/add">Add</a> | 
+        <a routerLink="/workouts/view">View Workouts</a> | 
+  </mat-toolbar>
 
-<app-view-message></app-view-message>
+<router-outlet></router-outlet>
