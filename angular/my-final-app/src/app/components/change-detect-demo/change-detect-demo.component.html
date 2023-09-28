@@ -1,0 +1,9 @@
+<p>change-detect-demo works!</p>
+<input #word type="text">
+<button (click)="addWord(word.value)">Add Word</button>
+
+<ul>
+    <li *ngFor="let d of words">{{d}}</li>
+</ul>
+
+<app-change-detect-demo1 [data]="words"></app-change-detect-demo1>

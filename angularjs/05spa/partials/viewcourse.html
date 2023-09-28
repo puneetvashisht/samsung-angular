@@ -1,5 +1,6 @@
 <!-- <button ng-click="loadCourses()"></button> -->
 <div class="row"  >
+    
     <s-card ng-repeat="course in courses" courseid={{course.id}} title={{course.title}} summary={{course.summary}} on-delete="deleteCourse(course.id)"></s-card>
     <!-- <button ng-click="deleteCourse(course.id)" class="btn btn-danger"> X </button> -->
 </div>  
