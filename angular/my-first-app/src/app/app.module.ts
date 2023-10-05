@@ -11,6 +11,7 @@ import { SearchPipe } from './search.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewEmployeesComponent } from './employees/view-employees/view-employees.component';
 import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddEmployeeComponent } from './employees/add-employee/add-employee.comp
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
